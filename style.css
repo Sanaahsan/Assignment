@@ -1,0 +1,55 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+
+}
+.top{
+    max-width: 250vh;
+    padding: 15px;
+    background-color: #002647;
+    border-radius: 32px 32px 0 0;
+}
+.patient{
+    padding:20px;
+    font-size-adjust:0.58;
+    color:#012E57;
+    text-align:left;
+}
+hr{
+    color: #B6B6B6;
+}
+.profile{
+    padding:40px;
+    color:#012E57;
+    font-size-adjust:0.40;
+}
+.profile,span{
+    font-size-adjust: 0.55;
+}
+.performance{
+    background: #002647;
+    width: 100%;
+    height:50%;
+    position:absolute;
+    border-radius: 32px;
+    color: #fff;
+    text-align: center;
+    font-size-adjust:0.70 ;
+}
+.box1{
+    color: black;
+    background: white;
+    width:10%;
+    text-align: start;
+    align-self:center;
+}
+.box2{
+    color: black;
+    background: #fff;
+    width: 10%;
+    text-align: start;
+}
+
+
