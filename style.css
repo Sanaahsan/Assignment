@@ -3,7 +3,6 @@
     padding:0;
     box-sizing: border-box;
     
-
 }
 .top{
     max-width: 250vh;
@@ -11,45 +10,166 @@
     background-color: #002647;
     border-radius: 32px 32px 0 0;
 }
+.right i{
+    font-size: 50px;
+}
 .patient{
     padding:20px;
     font-size-adjust:0.58;
     color:#012E57;
     text-align:left;
 }
+.patient span{
+    margin-left:5px;
+}
+
 hr{
     color: #B6B6B6;
 }
 .profile{
-    padding:40px;
+    padding:20px;
     color:#012E57;
     font-size-adjust:0.40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.profile,span{
+.profile span{
     font-size-adjust: 0.55;
 }
-.performance{
+
+.performance {
+    width: 100vw;
+    height: 300px;
     background: #002647;
-    width: 100%;
-    height:50%;
-    position:absolute;
-    border-radius: 32px;
+    margin: 10px auto;
+    border-radius: 12px;
+  }
+  
+  .performance h2 {
     color: #fff;
     text-align: center;
-    font-size-adjust:0.70 ;
-}
-.box1{
-    color: black;
-    background: white;
-    width:10%;
-    text-align: start;
-    align-self:center;
-}
-.box2{
-    color: black;
+    padding-top: 15px;
+  }
+  
+  .performance-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 50px;
+  }
+  
+  .performance-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  @keyframes progress {
+    0% {
+      --percentage: 0;
+    }
+    100% {
+      --percentage: var(--value);
+    }
+  }
+  
+  @property --percentage {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+  
+  [role="progressbar"] {
+    --percentage: var(--value);
+    --primary: #fcb000;
+    --secondary: #d9d9d9;
+    --size: 300px;
+    animation: progress 2s 0.5s forwards;
+    width: var(--size);
+    aspect-ratio: 2 / 1;
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  [role="progressbar"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+      from 0.75turn at 50% 100%,
+      var(--primary) calc(var(--percentage) * 1% / 2),
+      var(--secondary) calc(var(--percentage) * 1% / 2 + 0.1%)
+    );
+    mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+    -webkit-mask-mode: alpha;
+  }
+  
+  [role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) "%";
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--secondary);
+  }
+  
+  .emg,
+  .rom {
+    display: inline-block;
+    width: 130px;
+    height: 60px;
     background: #fff;
-    width: 10%;
-    text-align: start;
+    border-radius: 12px;
+    border: 2px solid #000;
+  }
+  .details {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 250px;
+    margin-left: 20px;
+  }
+.details-left{
+    color:#7d7d7d;
+
 }
+  
+
+.history{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap:235px;
+}
+.l p{
+    color: #002647;
+    margin-left:20px;
+}
+
+.footer{
+    background-color: black;
+    width:100%;
+    padding: 15px;
+    position:absolute;
+    bottom:0px;
+}
+.footer i{
+    color: #7d7d7d;
+    display:flex;
+    
+}
+
 
 
